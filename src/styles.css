@@ -1,0 +1,187 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Orbitron", "Segoe UI", system-ui, sans-serif;
+  --font-sans: "Rajdhani", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "Share Tech Mono", ui-monospace, monospace;
+
+  --color-bg: #050510;
+  --color-bg-deep: #07071a;
+  --color-surface: #0d0d22;
+  --color-surface-2: #141432;
+  --color-fg: #f4f0ff;
+  --color-muted: #9d97c4;
+  --color-faint: #6b6590;
+  --color-primary: #b84dff;
+  --color-primary-2: #7a1cff;
+  --color-cyan: #22d3ee;
+  --color-gold: #ffd166;
+  --color-danger: #ff3b4e;
+  --color-ok: #3dff6a;
+  --color-border: rgb(184 77 255 / 0.28);
+  --color-border-strong: rgb(184 77 255 / 0.55);
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 28px;
+
+  --shadow-glow: 0 0 24px rgb(184 77 255 / 0.28);
+  --shadow-cyan: 0 0 18px rgb(34 211 238 / 0.25);
+}
+
+@layer base {
+  html,
+  body,
+  #app {
+    height: 100%;
+  }
+  body {
+    margin: 0;
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    overflow: hidden;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+.panel {
+  background: linear-gradient(180deg, rgb(13 13 34 / 0.82), rgb(7 7 26 / 0.78));
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-glow), inset 0 1px 0 rgb(255 255 255 / 0.04);
+  backdrop-filter: blur(14px);
+}
+
+.panel-strong {
+  background: linear-gradient(180deg, rgb(20 16 48 / 0.88), rgb(8 8 28 / 0.9));
+  border: 1px solid var(--color-border-strong);
+  box-shadow: var(--shadow-glow);
+  backdrop-filter: blur(16px);
+}
+
+.neon-title {
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+  text-shadow:
+    0 0 18px rgb(184 77 255 / 0.85),
+    0 0 42px rgb(122 28 255 / 0.5);
+}
+
+.menu-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  min-height: 48px;
+  padding: 0.7rem 1rem;
+  border-radius: 12px;
+  border: 1px solid rgb(184 77 255 / 0.28);
+  background: linear-gradient(90deg, rgb(18 12 42 / 0.92), rgb(12 10 32 / 0.75));
+  color: var(--color-fg);
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition:
+    transform 150ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 150ms ease,
+    box-shadow 150ms ease;
+}
+.menu-btn:hover {
+  border-color: rgb(184 77 255 / 0.7);
+  box-shadow: 0 0 18px rgb(184 77 255 / 0.25);
+  transform: translateX(3px);
+}
+.menu-btn-primary {
+  background: linear-gradient(90deg, rgb(122 28 255 / 0.95), rgb(70 20 160 / 0.9));
+  border-color: rgb(184 77 255 / 0.8);
+  box-shadow: 0 0 22px rgb(184 77 255 / 0.35);
+}
+
+.hud-chip {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-fg);
+}
+
+.xp-track {
+  height: 8px;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.08);
+  overflow: hidden;
+}
+.xp-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #7a1cff, #b84dff 60%, #22d3ee);
+  box-shadow: 0 0 10px rgb(184 77 255 / 0.6);
+}
+
+.minimap {
+  border-radius: 999px;
+  border: 2px solid rgb(34 211 238 / 0.45);
+  box-shadow: var(--shadow-cyan), inset 0 0 18px rgb(5 5 16 / 0.85);
+  background: rgb(5 8 22 / 0.75);
+}
+
+.ability-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  min-height: 52px;
+  padding: 0.45rem 0.7rem 0.45rem 0.45rem;
+  border-radius: 14px;
+  border: 1px solid rgb(184 77 255 / 0.35);
+  background: rgb(10 10 28 / 0.72);
+  color: var(--color-fg);
+}
+.ability-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 30% 30%, rgb(184 77 255 / 0.55), rgb(20 16 48 / 0.9));
+  box-shadow: 0 0 12px rgb(184 77 255 / 0.4);
+}
+
+.scanlines {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 3px,
+    rgb(0 0 0 / 0.08) 3px,
+    rgb(0 0 0 / 0.08) 4px
+  );
+  opacity: 0.25;
+  mix-blend-mode: overlay;
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 8px rgb(184 77 255 / 0.6));
+  }
+  50% {
+    filter: drop-shadow(0 0 18px rgb(184 77 255 / 1));
+  }
+}
+
+.logo-mark {
+  animation: pulse-glow 3.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-mark,
+  .menu-btn {
+    animation: none;
+    transition: none;
+  }
+}

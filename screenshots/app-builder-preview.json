@@ -1,0 +1,40 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "WAR OF SNAKE",
+      "hasCanvas": false,
+      "bodyTextLen": 135,
+      "bodyTextHash": "386c1af8cf11ae3373fc4de17df68db01df0e4b0d49651655d15a3ccd3811f44",
+      "bodyTextPrefix": "Something went wrong The requested module '/src/components/game/",
+      "horizontalOverflow": false,
+      "consoleErrors": [
+        "%o\n\n%s\n\n%s\n SyntaxError: The requested module '/src/components/game/GameApp.tsx?t=1791435069985' does not provide an export named 'GameApp' The above error occurred in the <Lazy> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary."
+      ],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "WAR OF SNAKE",
+      "hasCanvas": false,
+      "bodyTextLen": 135,
+      "bodyTextHash": "386c1af8cf11ae3373fc4de17df68db01df0e4b0d49651655d15a3ccd3811f44",
+      "bodyTextPrefix": "Something went wrong The requested module '/src/components/game/",
+      "horizontalOverflow": false,
+      "consoleErrors": [
+        "%o\n\n%s\n\n%s\n SyntaxError: The requested module '/src/components/game/GameApp.tsx?t=1791435069985' does not provide an export named 'GameApp' The above error occurred in the <Lazy> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary."
+      ],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}
